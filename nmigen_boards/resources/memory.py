@@ -43,6 +43,7 @@ def SPIFlashResources(*args, cs, clk, mosi, miso, wp=None, hold=None,
 
 
 def SDCardResources(*args, clk, cmd, dat0, dat1=None, dat2=None, dat3=None, cd=None, wp=None,
+                    clk_fb=None, cmd_dir=None, dat0_dir=None, dat123_dir=None,
                     conn=None, attrs=None):
     resources = []
 
@@ -82,6 +83,16 @@ def SDCardResources(*args, clk, cmd, dat0, dat1=None, dat2=None, dat3=None, cd=N
         io_spi.append(Subsignal("miso", Pins(dat0, dir="i", conn=conn, assert_width=1)))
         resources.append(Resource.family(*args, default_name="sd_card", ios=io_spi,
                                          name_suffix="spi"))
+
+    if clk_fb is not None:
+        io_common.append(Subsignal("clk_fb", Pins(clk_fb, dir="i", conn=conn, assert_width=1)))
+
+    if cmd_dir is not None:
+        io_common.append(Subsignal("cmd_dir", Pins(cmd_dir, dir="o", conn=conn, assert_width=1)))
+    if dat0_dir is not None:
+        io_common.append(Subsignal("dat0_dir", Pins(dat0_dir, dir="o", conn=conn, assert_width=1)))
+    if dat123_dir is not None:
+        io_common.append(Subsignal("dat123_dir", Pins(dat123_dir, dir="o", conn=conn, assert_width=1)))
 
     return resources
 
