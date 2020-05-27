@@ -51,8 +51,7 @@ class ECPIX5Platform(LatticeECP5Platform):
 
         *SDCardResources(0,
             clk="P24", cmd="M24", dat0="N26", dat1="N25", dat2="N23", dat3="N21", cd="L22",
-            # TODO
-            # clk_fb="P25", cmd_dir="M23", dat0_dir="N24", dat123_dir="P26",
+            clk_fb="P25", cmd_dir="M23", dat0_dir="N24", dat123_dir="P26",
             attrs=Attrs(IO_TYPE="LVCMOS33"),
         ),
 
