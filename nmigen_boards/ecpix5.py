@@ -99,7 +99,7 @@ class ECPIX5Platform(LatticeECP5Platform):
         ),
 
         Resource("ulpi", 0,
-            Subsignal("rst",  PinsN("E23", dir="o")),
+            Subsignal("rst",  Pins("E23", dir="o")),
             Subsignal("clk",  Pins("H24", dir="i")),
             Subsignal("dir",  Pins("F22", dir="i")),
             Subsignal("nxt",  Pins("F23", dir="i")),
