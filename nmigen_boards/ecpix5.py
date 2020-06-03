@@ -67,7 +67,7 @@ class ECPIX5Platform(LatticeECP5Platform):
             Subsignal("dqs",    DiffPairs("V4 V1", "U5 U2", dir="io"), Attrs(IO_TYPE="SSTL135D_I")),
             Subsignal("dq",     Pins("T4 W4 R4 W5 R6 P6 P5 P4 R1 W3 T2 V3 U3 W1 T1 W2", dir="io")),
             Subsignal("dm",     Pins("J4 H5", dir="o")),
-            Subsignal("odt",    Pins("L2", dir="o")),
+            Subsignal("odt",    Pins("P3", dir="o")),
             Attrs(IO_TYPE="SSTL135_I")
         ),
 
